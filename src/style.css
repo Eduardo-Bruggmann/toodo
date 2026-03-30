@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+* {
+  font-family: 'Trispace', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
