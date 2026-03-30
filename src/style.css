@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 * {
-  font-family: 'Trispace', sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 400;
 }
