@@ -1,26 +1,24 @@
-# Focus - Gerenciador de Tarefas Kanban
+# TooDo
 
-Aplicação web de gerenciamento de tarefas em estilo **Kanban**, construída com **Vite + JavaScript + Tailwind CSS**.
+Aplicação web de lista de tarefas construída com **Vite + JavaScript + jQuery + Tailwind CSS**.
 
-O projeto permite criar, editar, excluir e mover tarefas entre colunas com **arrastar e soltar**.
+O projeto permite adicionar, visualizar, editar, concluir e remover tarefas, além de gerenciar uma descrição para cada item.
 
 ## Funcionalidades
 
-- 3 colunas fixas do Kanban:
-  - **A Fazer**
-  - **Em Andamento**
-  - **Concluído**
-- Criação de tarefas via modal
-- Edição de tarefas existentes
-- Exclusão de tarefas
-- Drag-and-drop para mover tarefas entre colunas
-- Persistência local em JSON usando `localStorage`
-- Contador automático por coluna
+- Adição de tarefas com título e descrição obrigatória
+- Lista renderizada dinamicamente com jQuery
+- Edição inline da tarefa e da descrição
+- Exibição e ocultação da descrição por tarefa
+- Marcação de tarefas como concluídas
+- Remoção de tarefas
+- Atualização automática da interface a cada alteração no array
 
 ## Tecnologias
 
 - [Vite](https://vitejs.dev/)
 - JavaScript (ES Modules)
+- [jQuery](https://jquery.com/)
 - [Tailwind CSS v4](https://tailwindcss.com/)
 
 ## Como executar localmente
@@ -52,45 +50,29 @@ npm run dev
 - `npm run build`: gera build de produção
 - `npm run preview`: pré-visualiza o build de produção
 
-## Persistência dos dados
+## Estrutura dos dados
 
-As tarefas são salvas no navegador usando `localStorage`, na chave:
-
-- `kanban_tasks`
-
-Formato (JSON):
+As tarefas são armazenadas em memória em um array de objetos com esta estrutura:
 
 ```json
 [
   {
-    "id": 1,
-    "title": "Exemplo",
+    "text": "Exemplo de tarefa",
     "description": "Descrição da tarefa",
-    "status": "todo"
+    "completed": false
   }
 ]
 ```
-
-Status possíveis:
-
-- `todo`
-- `in-progress`
-- `done`
 
 ## Estrutura do projeto
 
 - [index.html](index.html)
 - [src/main.js](src/main.js)
 - [src/style.css](src/style.css)
-- [src/components/Header.js](src/components/Header.js)
-- [src/components/Main.js](src/components/Main.js)
-- [src/components/Card.js](src/components/Card.js)
-- [src/components/Footer.js](src/components/Footer.js)
 
 ## Melhorias futuras (sugestões)
 
-- Ordenação de cards dentro da mesma coluna
+- Persistência com `localStorage`
 - Filtro e busca de tarefas
 - Tema claro/escuro
 - Exportar e importar tarefas em arquivo JSON
-- Sincronização com backend
